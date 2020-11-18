@@ -1,0 +1,91 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class LoopPractice {
+	public static void main(String[] args) {
+
+		Scanner scan = new Scanner(System.in);
+		System.out.print("Enter five numbers: ");
+		int number;
+		ArrayList<Integer> myArray = new ArrayList();
+		for (int i = 1; i < 5; i++) {
+			number = Integer.parseInt(scan.nextLine());
+			myArray.add(number);
+		}
+		// get the sum
+		int sum = 0;
+		for (int i = 0; i < myArray.size(); i++) {
+			sum += myArray.get(i);
+		}
+
+		// get the product
+		int product = 1;
+		for (int i = 0; i < myArray.size(); i++) {
+			sum *= myArray.get(i);
+		}
+		// get the smallest
+		int max = Integer.MIN_VALUE;
+		for (int i = 0; i < myArray.size(); i++) {
+			if (myArray.get(i) > max)
+				max = myArray.get(i);
+		}
+
+		// get the largest
+		int min = Integer.MAX_VALUE;
+		{
+			for (int i = 0; i < myArray.size(); i++) {
+				if (myArray.get(i) > min)
+					min = myArray.get(i);
+			}
+		}
+	}
+
+}
+
+
+Car Dealer:
+
+import java.util.Scanner;
+import java.util.*;
+import java.util.HashMap;
+
+public class CarDealer {
+
+	public CarDealer() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.print("Hello, what are you looking for: ");
+		String carType = scan.next();
+		Map<String, String> car = new HashMap<String, String>();
+		car.put("Civic", "Honda");
+		car.put("CR-V", "Honda");
+		car.put("Sentra", "Nissan");
+		car.put("Altima", "Nissan");
+		car.put("Highlander", "Toyota");
+		car.put("Camry", "Toyota");
+
+		Set<Map.Entry<String, String>> cars = car.entrySet();
+
+		if (car.containsKey(carType)){
+			System.out.print("Yes, we have that model");
+		}else {
+			System.out.print("No, we don't have that model");
+
+		
+			System.out.println("Here are the cars we have:");
+			for (Map.Entry<String, String> entry : cars) {
+				System.out.println("Key = " + entry.getKey());
+				System.out.println("Value = " + entry.getValue());
+				System.out.println();
+		
+		}
+
+	}
+
+}
+}
+
+
